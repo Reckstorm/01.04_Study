@@ -1,4 +1,7 @@
-﻿namespace _01._04_Study
+﻿using System.Drawing;
+using System.Windows.Forms;
+
+namespace _01._04_Study
 {
     partial class Form1
     {
@@ -32,8 +35,29 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Text = "Form1";
-        }
+            int i = 1;
 
+            btn.Click += (e, s) =>
+            {
+                if (i == 1)
+                {
+                    this.BackColor = Color.Red;
+                    i++;
+                }
+                if (i == 2)
+                {
+                    this.BackColor = Color.Yellow;
+                    i++;
+                }
+                else
+                {
+                    this.BackColor = Color.Green;
+                    i = 1;
+                }
+            };
+            this.Contains(btn);
+            }
+            Button btn;
         #endregion
     }
 }
