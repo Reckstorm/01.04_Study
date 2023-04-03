@@ -32,32 +32,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Text = "Form1";
-
-            int i = 1;
-
-              btn.Click(e, s) =>
-            {
-                switch (i)
-                {
-                    case 1:
-                        this.BackColor = Color.Red;
-                        iter++;
-                    break;
-                    case 2:
-                        this.BackColor = Color.Yellow;
-                        iter++;
-                    break;
-                    case 3:
-                        this.BackColor = Color.Green;
-                        iter = 1;
-                    break;
-                }
-            }
-
-            this.Controls.Add(btn);
         }
 
-        Button btn;
         #endregion
     }
 }
