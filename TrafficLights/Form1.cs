@@ -46,7 +46,7 @@ namespace TrafficLights
                     if (player)
                     {
                         btn.Text = "X";
-                        btn.BackColor == Color.Green;
+                        btn.BackColor = Color.Green;
                         btn.Enabled = false;
                         if (WinCheck("X"))
                         {
@@ -61,7 +61,7 @@ namespace TrafficLights
                     else
                     {
                         btn.Text = "0";
-                        btn.BackColor == Color.Yellow;
+                        btn.BackColor = Color.Yellow;
                         btn.Enabled = false;
                         if (WinCheck("0"))
                         {
