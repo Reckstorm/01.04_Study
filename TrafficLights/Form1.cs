@@ -3,6 +3,7 @@ namespace TrafficLights
     public partial class Form1 : Form
     {
         bool player = true; //true- first player,  false - second player
+        List<Button> buttonList = new List<Button>();
 
         private bool WinCheck(string symbolCheck)
         {
@@ -14,6 +15,27 @@ namespace TrafficLights
                (buttonList[6].Text.Equals(symbolCheck) && buttonList[7].Text.Equals(symbolCheck) && buttonList[8].Text.Equals(symbolCheck)) ||
                (buttonList[0].Text.Equals(symbolCheck) && buttonList[4].Text.Equals(symbolCheck) && buttonList[8].Text.Equals(symbolCheck)) ||
                (buttonList[2].Text.Equals(symbolCheck) && buttonList[4].Text.Equals(symbolCheck) && buttonList[6].Text.Equals(symbolCheck))))
+                return true;
+            else
+                return false;
+        }
+
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            InitializeComponent();
+            //the game buttons
+
+            for (int row = 0; row < 3; row++)
+            {
+                for (int col = 0; col < 3; col++)
+                {
+                    Button button = new Button();
+                    button.Size = new Size(100, 100);
+                    button.Location = new Point(col * 100, row * 100);
+                    buttonList.Add(button);
+                }
+            }
                     return true;
             else
                     return false;
@@ -23,20 +45,6 @@ namespace TrafficLights
         public Form1()
         {
             InitializeComponent();
-
-            //The region for front-coding
-            #region
-
-
-            btn = new Button();     //btn - name buttons for the playeing field
-
-
-            buttonList.Add(btn);    //List of the buttons on the playeing field 
-            this.Controls.Add(btn);
-            #endregion
-
-
-
             //Click on the button
             foreach (Button btn in buttonList)
             {
@@ -56,7 +64,6 @@ namespace TrafficLights
                                 btn2.Enabled = false;
                             }
                         }
-                        
                     }
                     else
                     {
@@ -74,9 +81,21 @@ namespace TrafficLights
                     }
                     player = !player;
                 };
+                Controls.Add(btn);
             }
         }
-        Button btn;
-        List<Button> buttonList = new List<Button>();
+        
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // Form1
+            // 
+            this.ClientSize = new System.Drawing.Size(300, 300);
+            this.Name = "Form1";
+            this.ResumeLayout(false);
+            }
+        }
     }
 }
