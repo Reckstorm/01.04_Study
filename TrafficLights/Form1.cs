@@ -36,16 +36,7 @@ namespace TrafficLights
                     buttonList.Add(button);
                 }
             }
-                    return true;
-            else
-                    return false;
-        }
 
-
-        public Form1()
-        {
-            InitializeComponent();
-            //Click on the button
             foreach (Button btn in buttonList)
             {
                 btn.Click += (e, sender) =>
@@ -84,7 +75,7 @@ namespace TrafficLights
                 Controls.Add(btn);
             }
         }
-        
+
 
         private void InitializeComponent()
         {
@@ -95,7 +86,6 @@ namespace TrafficLights
             this.ClientSize = new System.Drawing.Size(300, 300);
             this.Name = "Form1";
             this.ResumeLayout(false);
-            }
         }
     }
 }
