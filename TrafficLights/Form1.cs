@@ -3,7 +3,7 @@ namespace TrafficLights
     public partial class Form1 : Form
     {
         bool player = true; //true- first player,  false - second player
-
+        List<Button> buttonList = new List<Button>();
         private bool WinCheck(string symbolCheck)
         {
             if (((buttonList[0].Text.Equals(symbolCheck) && buttonList[3].Text.Equals(symbolCheck) && buttonList[6].Text.Equals(symbolCheck)) ||
@@ -23,8 +23,6 @@ namespace TrafficLights
         private void Form1_Load(object sender, EventArgs e)
         {
             InitializeComponent();
-
-            buttonList = new List<Button>();
             //the game buttons
 
             for (int row = 0; row < 3; row++)
@@ -35,7 +33,6 @@ namespace TrafficLights
                     button.Size = new Size(100, 100);
                     button.Location = new Point(col * 100, row * 100);
                     buttonList.Add(button);
-                    Controls.Add(button);
                 }
             }
 
@@ -77,10 +74,10 @@ namespace TrafficLights
                     }
                     player = !player;
                 };
+                Controls.Add(btn);
             }
         }
-        Button btn;
-        List<Button> buttonList = new List<Button>();
+        
 
         private void InitializeComponent()
         {
@@ -91,7 +88,6 @@ namespace TrafficLights
             this.ClientSize = new System.Drawing.Size(300, 300);
             this.Name = "Form1";
             this.ResumeLayout(false);
-
         }
     }
 }
