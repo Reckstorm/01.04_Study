@@ -24,16 +24,6 @@ namespace TrafficLights
         {
             InitializeComponent();
 
-            //The region for front-coding
-            #region
-
-
-            btn = new Button();     //btn - name buttons for the playeing field
-
-
-            buttonList.Add(btn);    //List of the buttons on the playeing field 
-            this.Controls.Add(btn);
-            #endregion
             buttonList = new List<Button>();
             //the game buttons
 
