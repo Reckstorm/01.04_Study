@@ -31,8 +31,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Text = "Game X-0";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += this.Form1_Load;
         }
-
     }
 }

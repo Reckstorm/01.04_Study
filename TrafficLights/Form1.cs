@@ -4,6 +4,7 @@ namespace TrafficLights
     {
         bool player = true; //true- first player,  false - second player
         List<Button> buttonList = new List<Button>();
+
         private bool WinCheck(string symbolCheck)
         {
             if (((buttonList[0].Text.Equals(symbolCheck) && buttonList[3].Text.Equals(symbolCheck) && buttonList[6].Text.Equals(symbolCheck)) ||
@@ -35,8 +36,15 @@ namespace TrafficLights
                     buttonList.Add(button);
                 }
             }
+                    return true;
+            else
+                    return false;
+        }
 
 
+        public Form1()
+        {
+            InitializeComponent();
             //Click on the button
             foreach (Button btn in buttonList)
             {
@@ -56,7 +64,6 @@ namespace TrafficLights
                                 btn2.Enabled = false;
                             }
                         }
-
                     }
                     else
                     {
@@ -88,6 +95,7 @@ namespace TrafficLights
             this.ClientSize = new System.Drawing.Size(300, 300);
             this.Name = "Form1";
             this.ResumeLayout(false);
+            }
         }
     }
 }
